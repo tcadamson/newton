@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 --]]
 
-local debug = {}
+local wdraw = {}
 
 local function getShapeColor(sensor, stype)
 	local alpha = 90
@@ -36,7 +36,7 @@ local function getShapeColor(sensor, stype)
 	return colors[stype]
 end
 
-debug.call = function(world)
+wdraw.call = function(world)
 	local bodies = world:getBodyList()
 	local outline = {0, 0, 0}
 	local render = {
@@ -72,5 +72,5 @@ debug.call = function(world)
 	end
 end
 
-setmetatable(debug, {__call = function(t, ...) debug.call(...) end})
-return debug
+setmetatable(wdraw, {__call = function(t, ...) wdraw.call(...) end})
+return wdraw

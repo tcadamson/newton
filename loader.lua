@@ -45,11 +45,11 @@ local function loadFixtures(body, list)
 	end
 end
 
-loader.call = function(filepath, body, x, y)
+loader.call = function(world, filepath, body, x, y)
 	local data = require(filepath).init()[body]
 	local b, btype
 	if not data.static then btype = "dynamic" end
-	b = love.physics.newBody(totoro.physics.world, x, y, btype)
+	b = love.physics.newBody(world, x, y, btype)
 	b:setFixedRotation(data.fixed)
 	b:setLinearDamping(data.ld)
 	b:setAngularDamping(data.ad)

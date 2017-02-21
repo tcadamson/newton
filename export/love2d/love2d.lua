@@ -1,7 +1,7 @@
 --[[
 Usage:
 local loader = require "loader"
-local body = loader([filepath], body, x, y)
+local body = loader(world, [filepath], body, x, y)
 --]]
 
 local obj = {}
