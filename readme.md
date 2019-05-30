@@ -17,14 +17,14 @@ local body
 local x, y = 100, 100
 
 function love.load()
-	body = loader(world, "physics/exportedFile", "bodyName", x, y)
+    body = loader(world, "physics/exportedFile", "bodyName", x, y)
 end
 
 function love.update(dt)
-	world:update(dt)
+    world:update(dt)
 end
 
 function love.draw()
-	wdraw(world)
+    wdraw(world)
 end
 ```
